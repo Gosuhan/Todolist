@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-list',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  constructor(public appService: AppService) { }
+
+  deleteList(item) {
+    const index = this.appService.Todolist.indexOf(item);
+    this.appService.Todolist.splice(index, 1);
+  }
+
+  deleteTodolist($event) {
+    this.appService.Todolist = [];
+  }
 
   ngOnInit() {
   }

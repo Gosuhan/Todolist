@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-add',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddComponent implements OnInit {
 
-  constructor() { }
+  addList(object) {
+    this.appService.Todolist.push(object);
+    console.log(this.appService.Todolist);
+  }
+
+  constructor(public appService: AppService) { }
 
   ngOnInit() {
   }

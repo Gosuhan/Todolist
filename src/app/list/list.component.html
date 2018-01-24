@@ -1,3 +1,9 @@
-<p>
-  list works!
-</p>
+To Do List
+<ul>
+  <li *ngFor="let t of appService.Todolist"> {{t}}
+    <button type="submit">Editer</button>
+    <button type="submit" (click)="deleteList($event)">Supprimer</button>
+  </li>
+</ul>
+<br>
+<button type="submit" (click)="deleteTodolist($event)">Supprimer la To Do List</button>

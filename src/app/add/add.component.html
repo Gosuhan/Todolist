@@ -1,3 +1,6 @@
-<p>
-  add works!
-</p>
+<form (submit) = 'addList(object.value); $event.preventDefault()'>
+  To Do <br>
+  <input type="text" #object/>
+  <button type="submit">Ajouter</button>
+</form>
+<br>
