@@ -2,7 +2,7 @@ To Do List
 <ul>
   <li *ngFor="let t of appService.Todolist"> {{t}}
     <button type="submit">Editer</button>
-    <button type="submit" (click)="deleteList($event)">Supprimer</button>
+    <button type="submit" (click)="deleteList(t)">Supprimer</button>
   </li>
 </ul>
 <br>
