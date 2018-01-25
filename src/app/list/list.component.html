@@ -1,9 +1,11 @@
 To Do List
 <ul>
   <li *ngFor="let t of appService.Todolist"> {{t}}
-    <button type="submit">Editer</button>
+    <input type="text" #newedit>
+    <button type="submit" (click)="editList(t, newedit.value)">Editer</button> <!-- Le "t" ne doit pas être mis en paramètre mais le text #newedit -->
     <button type="submit" (click)="deleteList(t)">Supprimer</button>
   </li>
 </ul>
+
 <br>
 <button type="submit" (click)="deleteTodolist($event)">Supprimer la To Do List</button>
